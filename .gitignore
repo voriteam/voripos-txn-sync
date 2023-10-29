@@ -1,0 +1,11 @@
+.idea/
+
+*.tar.gz
+
+*.db
+*.sqlite3
+
+# Litstream files
+*-shm
+*-wal
+*-litestream
