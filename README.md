@@ -16,7 +16,7 @@ This service is distributed via Homebrew.
 
 ```shell
 brew tap voriteam/voripos
-brew install voripos-txn-sync.sh
+brew install voripos-txn-sync
 brew services start voripos-txn-sync.sh
 ```
 
