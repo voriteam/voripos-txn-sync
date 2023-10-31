@@ -11,6 +11,7 @@ export VORIPOS_TXN_DB_PATH=$VORIPOS_DATA_DIR/Transaction.sqlite3
 export VORIPOS_TXN_DB_BUCKET=$(defaults read com.vori.VoriPOS provisioned_txnDbBucket)
 export VORIPOS_STORE_ID=$(defaults read com.vori.VoriPOS provisioned_storeID)
 export VORIPOS_LANE_ID=$(defaults read com.vori.VoriPOS provisioned_laneID)
+export GOOGLE_APPLICATION_CREDENTIALS=$(defaults read com.vori.VoriPOS provisioned_txnKeyPath)
 export VORIPOS_TXN_DB_BUCKET_PATH=$VORIPOS_TXN_DB_BUCKET/stores/$VORIPOS_STORE_ID/lanes/$VORIPOS_LANE_ID/transactional-data
 
 echo "Starting replication for Store ${VORIPOS_STORE_ID}, Lane ${VORIPOS_LANE_ID}"
