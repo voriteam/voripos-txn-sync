@@ -1,5 +1,13 @@
+#logging:
+#  level: debug
 dbs:
   - path: $VORIPOS_TXN_DB_PATH
     snapshot-interval: 10m
     replicas:
-      - url: $VORIPOS_TXN_DB_BUCKET_PATH
+      - type: $VORIPOS_LITESTREAM_TYPE
+        bucket: $VORIPOS_LITESTREAM_BUCKET
+        path: $VORIPOS_LITESTREAM_PATH
+        endpoint: $VORIPOS_LITESTREAM_ENDPOINT
+        region: $VORIPOS_LITESTREAM_REGION
+        access-key-id: $VORIPOS_LITESTREAM_ACCESS_KEY_ID
+        secret-access-key: $VORIPOS_LITESTREAM_SECRET_ACCESS_KEY
