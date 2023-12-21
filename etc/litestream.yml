@@ -1,5 +1,10 @@
-#logging:
-#  level: debug
+addr: ":9090"
+
+logging:
+  level: info
+  type: json
+  stderr: false
+
 dbs:
   - path: $VORIPOS_TXN_DB_PATH
     snapshot-interval: 10m
