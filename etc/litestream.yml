@@ -7,7 +7,6 @@ logging:
 
 dbs:
   - path: $VORIPOS_TXN_DB_PATH
-    snapshot-interval: 10m
     replicas:
       - type: $VORIPOS_LITESTREAM_TYPE
         bucket: $VORIPOS_LITESTREAM_BUCKET
@@ -16,3 +15,7 @@ dbs:
         region: $VORIPOS_LITESTREAM_REGION
         access-key-id: $VORIPOS_LITESTREAM_ACCESS_KEY_ID
         secret-access-key: $VORIPOS_LITESTREAM_SECRET_ACCESS_KEY
+        # Retain all data for 24 hours, creating a snapshot once an hour to reduce restoration time.
+        retention: 24h
+        retention-check-interval: 1h
+        snapshot-interval: 1h
