@@ -4,8 +4,8 @@
 export PATH="/opt/homebrew/bin:$PATH"
 
 # Source
-VORIPOS_DATA_DIR="${HOME}/Library/Containers/com.vori.VoriPOS/Data/Library/Application Support"
-export VORIPOS_TXN_DB_PATH=$VORIPOS_DATA_DIR/Transaction.sqlite3
+export VORIPOS_SANDBOXED_TXN_DB_PATH="${HOME}/Library/Containers/com.vori.VoriPOS/Data/Library/Application Support/Transaction.sqlite3"
+export VORIPOS_TXN_DB_PATH="${HOME}/Library/Application Support/VoriPOS/Transaction.sqlite3"
 
 # Sink
 VORIPOS_LITESTREAM_TYPE=
@@ -54,5 +54,5 @@ export VORIPOS_LITESTREAM_SECRET_ACCESS_KEY
 
 
 echo "Starting replication for Store ${VORIPOS_STORE_ID}, Lane ${VORIPOS_LANE_ID}"
-echo "Data written to ${VORIPOS_TXN_DB_PATH} will be replicated to ${VORIPOS_LITESTREAM_TYPE} endpoint ${VORIPOS_LITESTREAM_ENDPOINT}, bucket ${VORIPOS_LITESTREAM_BUCKET}, path ${VORIPOS_LITESTREAM_PATH}"
+echo "Data written to ${VORIPOS_TXN_DB_PATH} or ${VORIPOS_SANDBOXED_TXN_DB_PATH} will be replicated to ${VORIPOS_LITESTREAM_TYPE} endpoint ${VORIPOS_LITESTREAM_ENDPOINT}, bucket ${VORIPOS_LITESTREAM_BUCKET}, path ${VORIPOS_LITESTREAM_PATH}"
 litestream replicate -config "$( dirname -- "$0"; )/etc/litestream.yml"
