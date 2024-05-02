@@ -7,7 +7,7 @@ every second.
 Litestream requires access to the file system, specifically the directory where the VoriPOS app stores its transactional 
 database, so must be run directly on the POS machine. This database currently resides at the location below:
 
-> ~/Library/Containers/com.vori.VoriPOS/Data/Library/Application Support/Transaction.sqlite3
+> ~/Library/Application Support/VoriPOS/Transaction.sqlite3
 
 Given this directory/data belongs to another application, Litestream should be granted access to data from other apps.
 
